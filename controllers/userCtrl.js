@@ -3,6 +3,7 @@ const bcrypt = require('bcrypt')
 const jwt = require('jsonwebtoken')
 
 const userCtrl = {
+
     register: async (req, res) =>{
         try {
             
@@ -105,8 +106,6 @@ const userCtrl = {
         try {
             const user = await Users.findById(req.user.id)
           
-            console.log("HERE BABY LOL: " + JSON.stringify(req.body.posts))
-
             if(!user) return res.status(400).json({msg: "User does not exist."})
 
             await Users.findOneAndUpdate({_id: req.user.id}, {
@@ -119,7 +118,7 @@ const userCtrl = {
         }
     }
 
- }
+}
 
 const createAccessToken = (user) =>{
     return jwt.sign(user, process.env.ACCESS_TOKEN_SECRET, {expiresIn: '11m'})

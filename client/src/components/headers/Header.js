@@ -28,16 +28,16 @@ function Header() {
 
         <div className='logo'>
             <h1>
-                    <Link to="/">backtrack</Link>
+                    <Link to="/">{isLogged ? "Backtrack" : ''}</Link>
             </h1>
         </div>
 
         <ul>
-            <li><Link to="/">Home</Link></li>
+            <li><Link to="/">{isLogged ? 'Home' : ''}</Link></li>
 
             
             {
-                isLogged ? loggedRouter() :  <li><Link to="/login">Login</Link></li>
+                isLogged ? loggedRouter() :  <li><Link to="/login">Login | Register</Link></li>
             } 
 
         </ul>   
