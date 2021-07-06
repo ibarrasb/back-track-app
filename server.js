@@ -31,6 +31,7 @@ mongoose.connect(URI, {
     console.log('Connected to MongoDB')
 })
 
+//required for deployment to heroku 
 if(process.env.NODE_ENV === 'production'){
     app.use(express.static('client/build'))
     app.get('*', (req, res) => {

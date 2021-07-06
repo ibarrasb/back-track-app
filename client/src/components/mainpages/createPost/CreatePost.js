@@ -22,6 +22,7 @@ function CreatePost() {
     const [isLogged] = state.UserAPI.isLogged
     const [callback ,setCallback] = state.UserAPI.callback
     const [token] = state.token
+    // const addPost = state.UserAPI.addPost
   
     const handleChangeInput = e =>{
         const {name, value} = e.target
@@ -36,7 +37,9 @@ function CreatePost() {
                 await Axios.post('/api/posts', {...post}, {
                     headers: {Authorization: token}
                 })
-
+                await Axios.patch('/user/addpost', {post}, {
+                    headers: {Authorization: token}
+                })
             setPost(initialState)
             setCallback(!callback)
             
