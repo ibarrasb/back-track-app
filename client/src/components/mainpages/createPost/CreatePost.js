@@ -22,7 +22,6 @@ function CreatePost() {
     const [isLogged] = state.UserAPI.isLogged
     const [callback ,setCallback] = state.UserAPI.callback
     const [token] = state.token
-    // const addPost = state.UserAPI.addPost
   
     const handleChangeInput = e =>{
         const {name, value} = e.target
@@ -34,12 +33,15 @@ function CreatePost() {
         try {
             if(!isLogged) return alert("You're not logged in")
 
+            //Adds post to the post schema
                 await Axios.post('/api/posts', {...post}, {
                     headers: {Authorization: token}
                 })
+            //Assigns post to specific user
                 await Axios.patch('/user/addpost', {post}, {
                     headers: {Authorization: token}
                 })
+
             setPost(initialState)
             setCallback(!callback)
             
