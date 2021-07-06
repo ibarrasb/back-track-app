@@ -45,9 +45,9 @@ function UserAPI(token) {
         if(!isLogged) return alert("Please login")
 
  
-            setTweet([...tweet, {posts}])
+            setTweet([...tweet, {...posts}])
 
-            await axios.patch('/user/addpost', {posts: [...tweet, {posts}]}, {
+            await axios.patch('/user/addpost', {posts: [...tweet, {...posts}]}, {
                 headers: {Authorization: token}
             })
 
