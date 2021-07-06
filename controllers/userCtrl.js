@@ -5,10 +5,11 @@ const jwt = require('jsonwebtoken')
 const userCtrl = {
     register: async (req, res) =>{
         try {
-            const {name, email, password} = req.body;
+            
+            const {name, username, password} = req.body;
 
-            const user = await Users.findOne({email})
-            if(user) return res.status(400).json({msg: "The email already exists."})
+            const user = await Users.findOne({username})
+            if(user) return res.status(400).json({msg: "The username already exists."})
 
             if(password.length < 6) 
                 return res.status(400).json({msg: "Password is at least 6 characters long."})
@@ -16,7 +17,7 @@ const userCtrl = {
             // Password Encryption
             const passwordHash = await bcrypt.hash(password, 10)
             const newUser = new Users({
-                name, email, password: passwordHash
+                name, username, password: passwordHash
             })
 
             // Save mongodb
@@ -40,9 +41,9 @@ const userCtrl = {
     },
     login: async (req, res) =>{
         try {
-            const {email, password} = req.body;
+            const {username, password} = req.body;
 
-            const user = await Users.findOne({email})
+            const user = await Users.findOne({username})
             if(!user) return res.status(400).json({msg: "User does not exist."})
 
             const isMatch = await bcrypt.compare(password, user.password)
@@ -99,7 +100,22 @@ const userCtrl = {
         } catch (err) {
             return res.status(500).json({msg: err.message})
         }
+    },
+    addPost: async (req, res) =>{
+        try {
+            const user = await Users.findById(req.user.id)
+            if(!user) return res.status(400).json({msg: "User does not exist."})
+
+            await Users.findOneAndUpdate({_id: req.user.id}, {
+                posts: req.body.post
+            })
+
+            return res.json({msg: "Added post"})
+        } catch (err) {
+            return res.status(500).json({msg: err.message})
+        }
     }
+
  }
 
 

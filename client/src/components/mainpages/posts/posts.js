@@ -13,7 +13,7 @@ function posts() {
     const [userID] = state.UserAPI.id
 
 
-    console.log(posts)
+    
 
     const deletePost = async(id) => {
         try {

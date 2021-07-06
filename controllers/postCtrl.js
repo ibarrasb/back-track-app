@@ -3,6 +3,7 @@ const User = require('../models/userModel');
 
 //user controller for authentication
 const postsCtrl = {
+
 getPosts: async(req, res) =>{
         try {
             const posts = await Posts.find()
@@ -15,18 +16,16 @@ getPosts: async(req, res) =>{
 },
 createPost: async(req,res) => {
         try{
-            const{username, post, images} = req.body;
+            const{id, name, username, post} = req.body;
 
             const acc = await User.findOne({username})
-            if(acc) return res.status(200).json({msg: 'You made a post'})
-            if(!acc) return res.status(404).json({"msg": 'User does not exist'})
-
+            
             const newPost = new Posts({
-                username, post, images
+                id, name, username, post
             })
-            //Save Post to MongoDB
             await newPost.save()
-            res.json({accesstoken})
+            
+            res.json({msg: "Created a post"})
         
         } catch (err) {
             return res.status(500).json({msg: err.message})

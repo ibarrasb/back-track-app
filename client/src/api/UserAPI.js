@@ -27,7 +27,7 @@ function UserAPI(token) {
                     setFollowers(res.data.followers)
                     setFollowing(res.data.following)
                     setImg(res.data.img)
-                    console.log(res.data)
+                
                     
                 } catch (err) {
                     alert(err.response.data.msg)
@@ -40,11 +40,32 @@ function UserAPI(token) {
     },[token])
 
 
+    const addPost = async (product) => {
+        if(!isLogged) return alert("Please login to continue buying")
+
+        const check = post.every(item =>{
+            return item._id !== product._id
+        })
+
+        if(check){
+            setPost([...post, {...product}])
+
+            await axios.patch('/user/addpost', {posts: [...post, {...product}]}, {
+                headers: {Authorization: token}
+            })
+
+        }else{
+            alert("Post has already been made")
+        }
+    }
+
+
 
     return {
         isLogged: [isLogged, setIsLogged],
         callback: [callback, setCallback],
         name: [name, setName],
+        addPost: addPost,
         username: [username, setUsername],
         id: [userID, setUserID],
         image: [img, setImg],

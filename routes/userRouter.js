@@ -12,4 +12,6 @@ router.get('/refresh_token', userCtrl.refreshToken)
 
 router.get('/infor', auth,  userCtrl.getUser)
 
+router.patch('/addpost', auth, userCtrl.addPost)
+
 module.exports = router
