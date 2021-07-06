@@ -39,7 +39,7 @@ function posts() {
     return (
         <div className="post-made">
             {
-                posts.map(post => {
+                posts.slice(0).reverse().map(post => {
                     return <MadePost key={post._id} post={post}
                      />
                 })

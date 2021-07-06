@@ -15,7 +15,7 @@ function Home() {
     return (
         <div>
             <h1 className="home-page"> {isLogged ? `Welcome back ${name}` : 'Home'}</h1>
-            <CreatePost/>
+            <CreatePost className="post-bar"/>
             <Posts/>
         </div>
        

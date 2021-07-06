@@ -6,7 +6,6 @@ const fileUpload = require('express-fileupload')
 const cookieParser = require('cookie-parser')
 const path = require('path')
 
-
 const app = express()
 app.use(express.json())
 app.use(cookieParser())
@@ -39,6 +38,7 @@ if(process.env.NODE_ENV === 'production'){
     })
 }
 
+//starts server
 const PORT = process.env.PORT || 5000
 app.listen(PORT, () =>{
     console.log('Server is running on port', PORT)

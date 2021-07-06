@@ -104,10 +104,13 @@ const userCtrl = {
     addPost: async (req, res) =>{
         try {
             const user = await Users.findById(req.user.id)
+          
+            console.log("HERE BABY LOL: " + JSON.stringify(req.body.posts))
+
             if(!user) return res.status(400).json({msg: "User does not exist."})
 
             await Users.findOneAndUpdate({_id: req.user.id}, {
-                posts: req.body.post
+                posts: req.body.posts
             })
 
             return res.json({msg: "Added post"})
@@ -117,7 +120,6 @@ const userCtrl = {
     }
 
  }
-
 
 const createAccessToken = (user) =>{
     return jwt.sign(user, process.env.ACCESS_TOKEN_SECRET, {expiresIn: '11m'})
