@@ -1,6 +1,9 @@
 {
   "name": "backtrack-app",
   "version": "1.0.0",
+  "engines": {
+    "node": "v14.15.1"
+  },
   "description": "",
   "main": "server.js",
   "scripts": {
