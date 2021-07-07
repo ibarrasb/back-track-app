@@ -1,5 +1,147 @@
 .post-box{
+    padding: 8px;
     border-radius: 5px;
     border-style: solid;
     margin-top: 10px;
 }
+
+.user-info{
+    display: flex;
+    margin: 3px;
+    word-spacing: 4px;
+}
+.name{
+
+    text-align: left;
+    padding: 3px;
+}
+.username{
+    padding: 3px;
+}
+
+.post-info{
+    display: flex;
+}
+
+.likes{
+    text-align: left;
+}
+
+.date{
+    text-align: right;
+    margin-left: 80%;
+}
+.likes-box{
+    display: flex;
+    font-size: 25px;
+}
+
+.delete{
+    text-align: right;
+ 
+    margin-left: 80%;
+}
+
+
+/* RESPONSIVE STYLES */
+
+@media (max-width: 1125px){
+    .date{
+        margin-left: 85%;
+    }
+    .delete{
+        margin-left: 77%;
+    }
+
+}
+
+@media (max-width: 980px){
+
+    .date{
+        margin-left: 75%;
+    }
+    .delete{
+        margin-left: 72%;
+    }
+}
+
+@media (max-width: 860px){
+    .date{
+        margin-left: 73%;
+    }
+    .delete{
+        margin-left: 68%;
+    }
+}
+
+@media (max-width: 720px){
+    .date{
+        margin-left: 80%;
+    }
+    .delete{
+        margin-left: 70%;
+    }
+}
+
+@media(max-width: 660px){
+
+    .date{
+        margin-left: 67%;
+    }
+    .delete{
+        margin-left: 68%;
+    }
+}
+
+@media (max-width: 620px){
+    .date{
+        margin-left: 68%;
+    }
+    .delete{
+        margin-left: 65%;
+    }
+}
+
+@media(max-width: 565px){
+    .date{
+        margin-left: 63%;
+    }
+    .delete{
+        margin-left: 61%;
+    }
+}
+
+@media (max-width: 500px){
+
+    .date{
+        margin-left: 60%;
+    }
+    .delete{
+        margin-left: 50%;
+    }
+}
+
+@media (max-width: 400px){
+
+    .date{
+        margin-left: 50%;
+    }
+    .delete{
+        margin-left: 45%;
+    }
+}
+
+@media (max-width: 368px){
+
+    .date{
+        margin-left: 40%;
+    }
+    .delete{
+        margin-left: 39%;
+    }
+}
+
+
+
+
+

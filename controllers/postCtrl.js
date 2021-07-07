@@ -33,8 +33,10 @@ createPost: async(req,res) => {
 },
 deletePost: async(req, res) => {
     try {
-        await Posts.findByIdAndDelete(req.params.id)
-            res.json({msg: "Deleted a Product"})
+
+            await Posts.findByIdAndDelete(req.params.id)
+            res.json({msg: "Deleted a post"})
+
     } catch (err) {
         return res.status(500).json({msg: err.message})
     }

@@ -8,7 +8,7 @@ function Home() {
     const state = useContext(GlobalState)
     const [isLogged] = state.UserAPI.isLogged
     const [name] = state.UserAPI.name
-    //const [username] = state.UserAPI.username
+
  
    
 
@@ -16,7 +16,7 @@ function Home() {
         <div>
             <h1 className="home-page"> {isLogged ? `Welcome back ${name}` : 'Home'}</h1>
             <CreatePost className="post-bar"/>
-            <Posts/>
+            <Posts className="post-made"/>
         </div>
        
     );

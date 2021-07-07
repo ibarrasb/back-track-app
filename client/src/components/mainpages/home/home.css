@@ -8,3 +8,17 @@
     align-items: center;
     
 }
+
+.post-made{
+    max-width: 80%;
+    align-items: right;
+    margin-left: 10%;
+}
+
+@media (max-width: 720px){
+
+    .post-made{
+        max-width: 95%;
+        margin-left: 2.5%;
+    }
+}

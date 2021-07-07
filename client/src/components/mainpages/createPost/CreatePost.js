@@ -2,6 +2,8 @@ import React, {useContext, useState, useEffect}from 'react';
 import {GlobalState} from '../../../GlobalState'
 import Axios from 'axios';
 import SendIcon from '@material-ui/icons/Send';
+import { TextField } from '@material-ui/core';
+
 import './create.css'
 
 const initialState = {
@@ -48,19 +50,11 @@ function CreatePost() {
                 await Axios.post('/api/posts', {...post}, {
                     headers: {Authorization: token}
                 })
-            //Assigns post to specific user
-            //     await Axios.patch('/user/addpost', {...post}, {
-            //         headers: {Authorization: token}
-            //     })
-            // console.log( await Axios.patch('/user/addpost', {...post}, {
-            //     headers: {Authorization: token}
-            // }))
-            
-            
+           
             addPost(post)
             setPost(initialState)
             setCallback(!callback)
-            // window.location.reload()
+            window.location.reload()
             
         } catch (err) {
             alert(err.response.data.msg)
@@ -76,11 +70,11 @@ function CreatePost() {
         <div value={post.id = userID}/>
         <div value={post.name = name}/>
         <div value={post.username = username}/>
-
+    
         <div className="text-search">
-        <input type="text" name="post" className="in-post" value ={post.post} onChange={handleChangeInput} placeholder={`Whats on your mind ${ isLogged ? name : ''}`}>
-        </input>
-        <button type="submit" className="btn-post" ><SendIcon></SendIcon></button>
+        <TextField id="outlined-basic" label={`Whats on your mind ${ isLogged ? name : ''}`} variant="outlined" type="text" name="post" className="in-post" value ={post.post} onChange={handleChangeInput} >
+        </TextField>
+        <button type="submit" className="btn-post" ></button>
         </div> 
         </div>
 

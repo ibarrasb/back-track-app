@@ -28,7 +28,7 @@ function Header() {
 
         <div className='logo'>
             <h1>
-                    <Link to="/">{isLogged ? "Backtrack" : ''}</Link>
+                    <Link to="/">{isLogged ? "Shower Thoughts" : ''}</Link>
             </h1>
         </div>
 
