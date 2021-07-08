@@ -121,7 +121,7 @@ const userCtrl = {
 }
 
 const createAccessToken = (user) =>{
-    return jwt.sign(user, "y+t8srJ'uM%,pgSghD[jLb{/@Q9C*VZPwmZ>F4X78+{;/FpF!Q", {expiresIn: '11m'})
+    return jwt.sign(user, process.env.ACCESS_TOKEN_SECRET, {expiresIn: '11m'})
 }
 const createRefreshToken = (user) =>{
     return jwt.sign(user, process.env.REFRESH_TOKEN_SECRET, {expiresIn: '7d'})

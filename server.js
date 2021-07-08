@@ -20,7 +20,8 @@ app.use('/api', require('./routes/postRoutes'))
 
 // Connect to mongodb
 
-mongoose.connect("mongodb://ibarrasb:QBc35KaVjGliWMMN@cluster0-shard-00-00.9yudd.mongodb.net:27017,cluster0-shard-00-01.9yudd.mongodb.net:27017,cluster0-shard-00-02.9yudd.mongodb.net:27017/app-back?ssl=true&replicaSet=atlas-ma7mzu-shard-0&authSource=admin&retryWrites=true&w=majority", {
+
+mongoose.connect("mongodb+srv://ibarrasb:QBc35KaVjGliWMMN@cluster0.9yudd.mongodb.net/app-back?retryWrites=true&w=majority", {
     useCreateIndex: true,
     useFindAndModify: false,
     useNewUrlParser: true,
