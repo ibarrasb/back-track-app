@@ -66,3 +66,78 @@ p{
 
 
 }
+/* Iphone 12 and 12 pro  */
+@media only screen 
+    and (device-width: 390px) 
+    and (device-height: 844px) 
+    and (-webkit-device-pixel-ratio: 3) { 
+        .title{
+            font-size: 40px;
+            text-align: center;
+            margin-left:5%;
+            line-height: 45px;
+            margin-bottom: 20px;
+        }
+        h3{
+            margin: 6px;
+            text-align: center;
+            margin-left:5%;
+            line-height: 25px;
+            margin-bottom: 20px;
+        }
+        p{
+            margin: 10px;
+            text-align: center;
+            margin-left:5%;
+            line-height: 25px;
+            margin-bottom: 20px;
+        }
+        
+        .info{
+            max-width: 95%;
+        }
+        
+        .btn-c{
+            margin-left: 38%;
+            margin-top: 30px;
+        }
+    
+
+    }
+/* Iphone 12 pro max */
+    @media only screen 
+    and (device-width: 428px) 
+    and (device-height: 926px) 
+    and (-webkit-device-pixel-ratio: 3) { 
+        .title{
+            font-size: 40px;
+            text-align: center;
+            margin-left:5%;
+            line-height: 45px;
+            margin-bottom: 20px;
+        }
+        h3{
+            margin: 6px;
+            text-align: center;
+            margin-left:5%;
+            line-height: 25px;
+            margin-bottom: 20px;
+        }
+        p{
+            margin: 10px;
+            text-align: center;
+            margin-left:5%;
+            line-height: 25px;
+            margin-bottom: 20px;
+        }
+        
+        .info{
+            max-width: 95%;
+        }
+        
+        .btn-c{
+            margin-left: 38%;
+            margin-top: 30px;
+        }
+
+    }
