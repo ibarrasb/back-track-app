@@ -1,4 +1,5 @@
 require("dotenv").config();
+const  yeahp = require("http");
 const express = require('express')
 const mongoose = require('mongoose')
 const cors = require('cors')
@@ -36,6 +37,11 @@ if(process.env.NODE_ENV === 'production'){
         res.sendFile(path.join(__dirname, 'client', 'build', 'index.html'))
     })
 }
+
+
+setInterval(function() {
+    yeahp.get("https://shower-thoughts-v2.herokuapp.com");
+}, 300000); // every 5 minutes (300000)
 
 //starts server
 const PORT = process.env.PORT || 5000
