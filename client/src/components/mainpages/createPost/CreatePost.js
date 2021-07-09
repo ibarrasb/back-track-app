@@ -1,7 +1,7 @@
-import React, {useContext, useState, useEffect}from 'react';
+import React, {useContext, useState}from 'react';
 import {GlobalState} from '../../../GlobalState'
 import Axios from 'axios';
-import SendIcon from '@material-ui/icons/Send';
+
 import { TextField } from '@material-ui/core';
 
 import './create.css'
@@ -28,9 +28,7 @@ function CreatePost() {
     const [isLogged] = state.UserAPI.isLogged
     const [callback ,setCallback] = state.UserAPI.callback
     const [token] = state.token
-
     const [post, setPost] = useState(initialState)
-    const [detailPost, setDetailPost] = useState([])
     const addPost = state.UserAPI.addPost
 
     const handleChangeInput = e =>{
@@ -76,6 +74,9 @@ function CreatePost() {
         </TextField>
         <button type="submit" className="btn-post" ></button>
         </div> 
+        <div className="display-text">
+        <h1 className="newsfeed">Your Newsfeed</h1>
+        </div>
         </div>
 
         </form>

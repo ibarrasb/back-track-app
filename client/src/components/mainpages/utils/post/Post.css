@@ -3,6 +3,7 @@
     border-radius: 25px;
     
     margin-top: 10px;
+    margin-bottom: 20px;
     
     background-color: aliceblue;
     background-image:
@@ -44,9 +45,13 @@
 }
 
 .delete{
-    text-align: right;
- 
-    margin-left: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 10px;
+    margin-right: 10px;
+    font-size: 20px;
+    
 }
 
 
