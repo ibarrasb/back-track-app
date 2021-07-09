@@ -21,7 +21,7 @@ app.use('/api', require('./routes/postRoutes'))
 // Connect to mongodb
 
 
-mongoose.connect("mongodb+srv://ibarrasb:QBc35KaVjGliWMMN@cluster0.9yudd.mongodb.net/app-back?retryWrites=true&w=majority", {
+mongoose.connect("mongodb+srv://ibarrasb:QBc35KaVjGliWMMN@cluster0.9yudd.mongodb.net/backtrack?retryWrites=true&w=majority", {
     useCreateIndex: true,
     useFindAndModify: false,
     useNewUrlParser: true,
@@ -43,4 +43,5 @@ if(process.env.NODE_ENV === 'production'){
 const PORT = process.env.PORT || 5000
 app.listen(PORT, () =>{
     console.log('Server is running on port', PORT)
+    console.log(process.env.REFRESH_TOKEN_SECRET)
 })
