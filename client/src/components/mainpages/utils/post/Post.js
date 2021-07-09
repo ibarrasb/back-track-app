@@ -25,14 +25,29 @@ function Post({post}) {
         }
     }
 
+    
+
+    const doublePlay = (id) => {
+        removePost(id)
+        reLoad()
+
+    }
+
     const deletePost = () => {
+
+
         return (
 
             <button>
-        <DeleteOutlineOutlinedIcon onClick={() => removePost(post._id)} className="delete"/>
+        <DeleteOutlineOutlinedIcon onClick={() => doublePlay(post._id)} className="delete"/>
         </button>
 
         )
+        
+    }
+    const reLoad = () => {
+
+        window.location.reload()
     }
 
 

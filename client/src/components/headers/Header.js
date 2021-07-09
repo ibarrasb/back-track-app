@@ -3,6 +3,9 @@ import {GlobalState} from '../../GlobalState'
 import {Link} from 'react-router-dom'
 import axios from 'axios';
 import './header.css'
+import Shower from '../../images/shower-solid.svg'
+import Thought from '../../images/comment-solid.svg'
+
 
 function Header() {
     const state = useContext(GlobalState)
@@ -23,12 +26,21 @@ function Header() {
         )
     }
 
+    const hNew = () =>{
+        return(
+            <div className="header-img">
+            <img src={Shower} alt="" className="shower" />
+            <img src={Thought} alt="" className="thought" />
+          </div>
+        )
+    }
+
     return (
     <header>
 
         <div className='logo'>
             <h1>
-                    <Link to="/">{isLogged ? "Shower Thoughts" : ''}</Link>
+                    <Link to="/">{isLogged ? hNew() : ''}</Link>
             </h1>
         </div>
 
@@ -37,7 +49,7 @@ function Header() {
 
             
             {
-                isLogged ? loggedRouter() :  <li><Link to="/login">Login | Register</Link></li>
+                isLogged ? loggedRouter() :  <li><Link to="/login">Login</Link></li>
             } 
 
         </ul>   

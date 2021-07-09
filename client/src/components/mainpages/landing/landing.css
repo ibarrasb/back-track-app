@@ -4,7 +4,14 @@
     margin-left:20%;
     line-height: 32px;
     margin-bottom: 30px;
+    font-family: 'Fuggles', cursive;
 }
+
+.landing-text{
+    font-family: 'Crimson Text', serif;
+}
+
+
 h3{
     margin: 10px;
     text-align: center;

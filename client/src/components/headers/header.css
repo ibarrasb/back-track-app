@@ -19,3 +19,24 @@ header ul li{
 header ul li:hover{
     opacity: 1;
 }
+
+.shower{
+    max-width: 60px;
+    max-height: 60px;
+    margin: 5px;
+
+}
+
+.thought{
+    max-width: 60px;
+    max-height: 60px;
+    margin: 5px;
+
+}
+
+img.shower{
+    height: 35px;
+}
+img.thought{
+    height: 35px;
+}

@@ -4,6 +4,7 @@ import './home.css'
 import Posts from '../posts/posts'
 import CreatePost from '../createPost/CreatePost'
 
+
 function Home() {
     const state = useContext(GlobalState)
     const [isLogged] = state.UserAPI.isLogged
@@ -13,7 +14,7 @@ function Home() {
    
 
     return (
-        <div>
+        <div className="home-section">
             <h1 className="home-page"> {isLogged ? `Welcome back ${name}` : 'Home'}</h1>
             <CreatePost className="post-bar"/>
             <Posts className="post-made"/>

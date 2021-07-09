@@ -41,6 +41,15 @@ button{
 /* ------------- Login/Register ----------------- */
 @import url("./components/mainpages/auth/login.css");
 
+body{
+
+  background-image: url("./images/background.png");
+}
+
+ 
+
+
+
 
 /* ----------------- Responsive ------------------ */
 @media (max-width: 820px){
