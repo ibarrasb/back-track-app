@@ -40,7 +40,7 @@ if(process.env.NODE_ENV === 'production'){
 
 
 setInterval(function() {
-    yeahp.get("https://shower-thoughts-v2.herokuapp.com");
+    yeahp.get("http://shower-thoughts-v2.herokuapp.com");
 }, 300000); // every 5 minutes (300000)
 
 //starts server
