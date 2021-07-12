@@ -1,6 +1,7 @@
 import React, {useContext} from 'react';
 import './Post.css';
 import Axios from 'axios';
+import {Link} from 'react-router-dom';
 import {GlobalState} from '../../../../GlobalState'
 import ThumbUpAltIcon from '@material-ui/icons/ThumbUpAlt';
 import DeleteOutlineOutlinedIcon from '@material-ui/icons/DeleteOutlineOutlined';
@@ -52,13 +53,11 @@ function Post({post}) {
 
 
     return (
-        <div>
-        <div className="post-box">
+<div>
+    <div className="post-box">
         <div className="user-info">
         <h2 className="name">{post.name}</h2>
         <h2 className="username">@{post.username}</h2>
-
-    
 
         {
             userID === post.id ? deletePost() : ''
@@ -72,16 +71,20 @@ function Post({post}) {
         <div className="post-info">
 
         <div className="likes-box">
-        <p className="likes">{post.likes}</p>
+        
         <button>
-        <ThumbUpAltIcon/>
+        <ThumbUpAltIcon ><p className="likes">{post.likes}</p></ThumbUpAltIcon>
         </button>
+        </div>
+
+        <div className="comment-text">
+        <Link to={`/comments/${post._id}`}>Comments</Link>
         </div>
         <p className="date">{new Date(post.createdAt).toLocaleString()}</p>
         </div>
        
     </div>
-        </div>
+</div>
     );
 }
 

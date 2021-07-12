@@ -70,7 +70,7 @@ function CreatePost() {
         <div value={post.username = username}/>
     
         <div className="text-search">
-        <TextField id="outlined-basic" label={`Whats on your mind ${ isLogged ? name : ''}`} variant="outlined" type="text" name="post" className="in-post" value ={post.post} onChange={handleChangeInput} >
+        <TextField id="outlined-basic" label={`Whats on your mind ${ isLogged ? name : ''} ?`} variant="outlined" type="text" name="post" className="in-post" value ={post.post} onChange={handleChangeInput} >
         </TextField>
         <button type="submit" className="btn-post" ></button>
         </div> 

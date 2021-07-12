@@ -28,21 +28,19 @@
 }
 
 .post-info{
-    display: flex;
+    
 }
 
 .likes{
     text-align: left;
+    color: aliceblue;
 }
 
 .date{
     text-align: right;
     margin-left: 80%;
 }
-.likes-box{
-    display: flex;
-    font-size: 25px;
-}
+
 
 .delete{
     display: flex;
@@ -53,6 +51,7 @@
     font-size: 20px;
     
 }
+
 
 
 /* RESPONSIVE STYLES */
