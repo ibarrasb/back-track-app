@@ -14,6 +14,9 @@ router.get('/logout', userCtrl.logout)
 //gets refresh token to keep user authenticated
 router.get('/refresh_token', userCtrl.refreshToken)
 
+//retrieves all users from db
+router.get('/users', userCtrl.allUsers)
+
 //retrieves information from db of the specific user
 router.get('/infor', auth,  userCtrl.getUser)
 

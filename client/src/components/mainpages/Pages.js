@@ -5,6 +5,7 @@ import Register from './auth/Register'
 import Home from './home/Home'
 import NotFound from './utils/not_found/NotFound'
 import LandingPage from './landing/Page'
+import UserProfile from './user/UserProfile'
 
 import {GlobalState} from '../../GlobalState'
 
@@ -15,6 +16,7 @@ function Pages() {
     return (
         <Switch>
             <Route path='/' exact component={isLogged ? Home : LandingPage}/>
+            <Route path='/profile/:id' exact component={UserProfile}/>
             <Route path='/login' exact component={isLogged ? NotFound : Login}/>
             <Route path='/register' exact component={isLogged ? NotFound : Register}/>
 

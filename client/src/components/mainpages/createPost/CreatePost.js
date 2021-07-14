@@ -22,7 +22,6 @@ function CreatePost() {
  
     const state = useContext(GlobalState)
     const [username] = state.UserAPI.username
-    
     const [name] = state.UserAPI.name
     const [userID] = state.UserAPI.id
     const [isLogged] = state.UserAPI.isLogged

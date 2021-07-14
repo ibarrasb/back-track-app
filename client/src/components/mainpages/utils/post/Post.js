@@ -39,7 +39,7 @@ function Post({post}) {
 
         return (
 
-            <button>
+        <button>
         <DeleteOutlineOutlinedIcon onClick={() => doublePlay(post._id)} className="delete"/>
         </button>
 

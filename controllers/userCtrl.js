@@ -116,7 +116,17 @@ const userCtrl = {
         } catch (err) {
             return res.status(500).json({msg: err.message})
         }
-    }
+    }, 
+    allUsers: async(req, res) =>{
+        try {
+            const users = await Users.find()
+            res.json(users)
+    
+            
+        } catch (err) {
+            return res.status(500).json({msg: err.message})
+        }
+}
 
 }
 
