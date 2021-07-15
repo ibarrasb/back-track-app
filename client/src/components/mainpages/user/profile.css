@@ -1,0 +1,17 @@
+.profile-header{
+    align-items: center;
+    text-align: center;
+}
+.follows{
+    display: flex;
+    padding-left: 34%;
+    margin-top: 15px;
+    margin-bottom: 15px;
+ 
+}
+.following{
+    padding-left: 5%;
+}
+.followers{
+    padding-left: 5%;
+}
