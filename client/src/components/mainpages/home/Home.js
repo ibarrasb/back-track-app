@@ -10,11 +10,6 @@ function Home() {
     const state = useContext(GlobalState)
     const [isLogged] = state.UserAPI.isLogged
 
- 
-
- 
-   
-
     return (
         <div className="home-section">
             <h1 className="home-page"> {isLogged ? 'Shower Thoughts' : 'Home'}</h1>
