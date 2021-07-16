@@ -66,7 +66,7 @@ function Post({post}) {
         </div>
         
 
-        <h1>{post.post}</h1>
+        <h1 className="post-text">{post.post}</h1>
 
         <div className="post-info">
 

@@ -1,6 +1,7 @@
 .post-box{
     padding: 8px;
     border-radius: 25px;
+    font-family: 'Roboto', sans-serif;
     
     margin-top: 10px;
     margin-bottom: 20px;
@@ -9,25 +10,32 @@
     background-image:
       linear-gradient(
         to top right, 
-        aliceblue, aquamarine
+        white, silverylightgrey
       );
+
+      
 }
 
 .user-info{
     display: flex;
     margin: 3px;
     word-spacing: 4px;
+    font-family: 'Roboto', sans-serif;
 }
 .name{
 
     text-align: left;
     padding: 3px;
+    
 }
 .username{
     padding: 3px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 200;
 }
 
 .post-info{
+    font-family: 'Roboto', sans-serif;
     
 }
 
@@ -50,6 +58,11 @@
     margin-right: 10px;
     font-size: 20px;
     
+}
+
+.post-text{
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
 }
 
 
