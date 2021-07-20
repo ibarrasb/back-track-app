@@ -26,8 +26,6 @@ function Post({post}) {
         }
     }
 
-    
-
     const doublePlay = (id) => {
         removePost(id)
         reLoad()
@@ -36,21 +34,19 @@ function Post({post}) {
 
     const deletePost = () => {
 
-
         return (
 
-        <button>
-        <DeleteOutlineOutlinedIcon onClick={() => doublePlay(post._id)} className="delete"/>
-        </button>
+            <button>
+                <DeleteOutlineOutlinedIcon onClick={() => doublePlay(post._id)} className="delete"/>
+            </button>
 
         )
-        
     }
+
     const reLoad = () => {
 
         window.location.reload()
     }
-
 
     return (
 <div>
@@ -85,6 +81,7 @@ function Post({post}) {
        
     </div>
 </div>
+
     );
 }
 
