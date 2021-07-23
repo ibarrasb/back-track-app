@@ -54,9 +54,8 @@ function UserProfile() {
             {
                 // only returns posts made by user that matches id
                 userPosts.slice(0).reverse().map(post => {
-                    if(post.id === params.id){
-                    return <MadePost key={post._id} post={post}/>
-                    }
+                    if(post.id === params.id) return <MadePost key={post._id} post={post}/>
+                    
                 })
             } 
             </div>

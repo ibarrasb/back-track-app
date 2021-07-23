@@ -33,12 +33,11 @@ function CreatePost() {
     const handleChangeInput = e =>{
         const {name, value} = e.target
         setPost({...post, [name]:value})
- 
     }
 
     const handleSubmit = async e =>{
-
         e.preventDefault()
+        
         try {
 
             if(!isLogged) return alert("You're not logged in")

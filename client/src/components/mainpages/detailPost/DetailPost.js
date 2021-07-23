@@ -2,6 +2,7 @@ import React, {useContext, useState, useEffect} from 'react';
 import { useParams } from 'react-router-dom';
 import {GlobalState} from '../../../GlobalState'
 import {Link} from 'react-router-dom';
+import { TextField } from '@material-ui/core';
 import MadePost from '../utils/post/Post'
 import './detail.css'
 
@@ -25,9 +26,10 @@ function DetailPost() {
    
     }, [params.id, userPosts])
 
-    console.log(detailedPost)
-   
+
     let replies = detailedPost.replies
+
+    console.log(replies)
     if(replies == null) replies = []
     
 
@@ -44,9 +46,13 @@ function DetailPost() {
         </div>
         <h1 className="post-text">{detailedPost.post}</h1>
 
-            <h3 className='comments-txt'>Comments</h3>
+        <div className="reply-input">
+        <TextField id="outlined-basic" label="Reply to post" variant="outlined" />
+        </div>
+
+            <div className='comments-txt'/>
             {
-                replies.length == 0 ? "No replies yet" : ''
+                replies.length === 0 ? "No replies yet" : ''
             }
 
             
