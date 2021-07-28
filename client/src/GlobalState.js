@@ -2,6 +2,7 @@ import axios from 'axios'
 import React, {createContext, useEffect, useState} from 'react'
 import UserAPI from './api/UserAPI'
 import PostsAPI from './api/PostsAPI'
+import ReplyAPI from './api/ReplyAPI'
 import AllUsersAPI from './api/AllUsersAPI'
 
 export const GlobalState = createContext()
@@ -23,6 +24,7 @@ const state = {
     token: [token, setToken],
     UserAPI: UserAPI(token),
     PostsAPI: PostsAPI(),
+    ReplyAPI: ReplyAPI(),
     AllUsersAPI: AllUsersAPI()
 
 }
