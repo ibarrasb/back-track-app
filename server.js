@@ -20,7 +20,7 @@ app.use('/user', require('./routes/userRouter'))
 app.use('/api', require('./routes/postRoutes'))
 
 // Connect to mongodb
-mongoose.connect("mongodb+srv://ibarrasb:QBc35KaVjGliWMMN@cluster0.9yudd.mongodb.net/backtrack?retryWrites=true&w=majority", {
+mongoose.connect("mongodb+srv://ibarrasb:QBc35KaVjGliWMMN@cluster0.9yudd.mongodb.net/shower-thoughts?retryWrites=true&w=majority", {
     useCreateIndex: true,
     useFindAndModify: false,
     useNewUrlParser: true,

@@ -2,8 +2,8 @@ import React, {useContext, useState, useEffect} from 'react';
 import { useParams } from 'react-router-dom';
 import {GlobalState} from '../../../GlobalState'
 import {Link} from 'react-router-dom';
-import { TextField } from '@material-ui/core';
-import MadePost from '../utils/post/Post'
+import CreateReply from '../createReply/CreateReply'
+import MadeReply from '../utils/reply/Reply'
 import './detail.css'
 
 function DetailPost() {
@@ -11,6 +11,7 @@ function DetailPost() {
     const state = useContext(GlobalState);
     const [userPosts] = state.PostsAPI.posts
     const [userID] = state.UserAPI.id
+    const [postReplies] = state.ReplyAPI.replies
     const [detailedPost, setDetailedPost] = useState([])
 
 
@@ -47,13 +48,21 @@ function DetailPost() {
         <h1 className="post-text">{detailedPost.post}</h1>
 
         <div className="reply-input">
-        <TextField id="outlined-basic" label="Reply to post" variant="outlined" />
+        <CreateReply />
         </div>
 
             <div className='comments-txt'/>
-            {
-                replies.length === 0 ? "No replies yet" : ''
-            }
+          {
+                    
+                        // only returns posts made by user that matches id
+                        postReplies.slice(0).reverse().map(post => {
+                            if(post.id === params.id) return <MadeReply key={post._id} post={post} />
+
+                            
+                        })
+                     
+                }
+            
 
             
         </div>

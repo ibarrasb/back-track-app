@@ -1,6 +1,6 @@
 const Posts = require('../models/postModels');
 const User = require('../models/userModel');
-const Reply = require('../models/replyModel');
+const Reply = require('../models/replyModels');
 
 //user controller for authentication
 const replyCtrl = {
@@ -17,12 +17,12 @@ getReply: async(req, res) =>{
 },
 createReply: async(req,res) => {
         try{
-            const{id, name, username, post} = req.body;
+            const{id, posterid, name, username, post} = req.body;
 
             const acc = await User.findOne({username})
             
             const newPost = new Reply({
-                id, name, username, post
+                id, posterid, name, username, post
             })
             await newPost.save()
             

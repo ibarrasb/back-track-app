@@ -8,6 +8,7 @@ import './reply.css'
 
 const initialState = {
     "id": '',
+    "posterid": '',
     "name": '',
     "username": '',
     "post": '',
@@ -21,6 +22,7 @@ function CreateReply() {
     const [username] = state.UserAPI.username
     const [name] = state.UserAPI.name
     const [isLogged] = state.UserAPI.isLogged
+    const [userID] = state.UserAPI.id
     const [callback ,setCallback] = state.UserAPI.callback
     const [token] = state.token
     const [post, setPost] = useState(initialState)
@@ -58,6 +60,7 @@ function CreateReply() {
         <div>
 
         <div value={post.id = params.id}/>
+        <div value={post.posterid = userID}/>
         <div value={post.name = name}/>
         <div value={post.username = username}/>
     
