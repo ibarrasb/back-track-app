@@ -52,7 +52,7 @@ function Reply({post}) {
     <div className="post-box">
         <div className="user-info">
         <h2 className="name">{post.name}</h2>
-        <h2 className="username"><Link to={`/profile/${post.id}`}>@{post.username}</Link></h2>
+        <h2 className="username"><Link to={`/profile/${post.posterid}`}>@{post.username}</Link></h2>
 
         {
             userID === post.posterid ? deletePost() : ''
