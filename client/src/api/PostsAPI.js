@@ -9,6 +9,7 @@ function PostsAPI() {
 
     useEffect(() =>{
         
+        // Get all the posts made 
         const getPosts = async () => {
             const res = await axios.get('/api/posts')
             setPosts(res.data)

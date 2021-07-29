@@ -9,10 +9,10 @@ function ReplyAPI() {
 
     useEffect(() =>{
         
+        //retrives all the commens made on every post
         const getReply = async () => {
             const res = await axios.get('/api/reply')
             setReply(res.data)
-           
         }
         getReply()
     },[callback])

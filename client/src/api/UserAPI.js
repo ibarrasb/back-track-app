@@ -2,6 +2,7 @@ import {useState, useEffect} from 'react';
 import axios from 'axios'
 
 function UserAPI(token) {
+    
     const [isLogged, setIsLogged] = useState(false)
     const [callback, setCallback] = useState(false)
     const [name, setName] = useState()
@@ -16,7 +17,10 @@ function UserAPI(token) {
 
     useEffect(() =>{
         if(token){
+
+            //retrieves all the users current information
             const getUser = async () =>{
+
                 try {
                     const res = await axios.get('/user/infor', {
                         headers: {Authorization: token}
@@ -31,17 +35,14 @@ function UserAPI(token) {
                     setFollowing(res.data.following)
                     setImg(res.data.img)
                 
-                    
                 } catch (err) {
-                    alert(err.response.data.msg)
-                    
+                    alert(err.response.data.msg) 
                 }
             }
             getUser()
         }
 
     },[token])
-
 
     const addPost = async (posts) => {
         if(!isLogged) return alert("Please login")
@@ -53,8 +54,6 @@ function UserAPI(token) {
             })
 
     }
-
-
 
     return {
         isLogged: [isLogged, setIsLogged],

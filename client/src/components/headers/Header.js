@@ -13,22 +13,28 @@ function Header() {
     const state = useContext(GlobalState)
     const [isLogged] = state.UserAPI.isLogged
     const [menu, setMenu] = useState(false)
+    const [userID] = state.UserAPI.id
 
 
+    //logs user out
     const logoutUser = async () => {
         await axios.get('/user/logout')
         localStorage.clear()
         window.location.href = "/"
     }
 
+    //if user is logged, it shows appropriate menu
     const loggedRouter = () => {
+
         return(
             <div>
             <li><Link to="/" onClick={logoutUser}>Logout</Link></li>
+            <li><Link to={`/profile/${userID}`}>Profile</Link></li>
             </div>
         )
     }
 
+    //displays svg icons for home 
     const hNew = () =>{
         return(
             <div className="header-img">
@@ -38,6 +44,7 @@ function Header() {
         )
     }
 
+    //styled component
     const styleMenu = {
         left: menu ? 0 : "-100%",
         

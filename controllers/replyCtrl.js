@@ -1,8 +1,7 @@
-const Posts = require('../models/postModels');
 const User = require('../models/userModel');
 const Reply = require('../models/replyModels');
 
-//user controller for authentication
+
 const replyCtrl = {
 
 getReply: async(req, res) =>{

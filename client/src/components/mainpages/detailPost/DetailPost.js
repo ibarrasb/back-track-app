@@ -7,13 +7,13 @@ import MadeReply from '../utils/reply/Reply'
 import './detail.css'
 
 function DetailPost() {
+
     const params = useParams();
     const state = useContext(GlobalState);
     const [userPosts] = state.PostsAPI.posts
     const [userID] = state.UserAPI.id
     const [postReplies] = state.ReplyAPI.replies
     const [detailedPost, setDetailedPost] = useState([])
-
 
     //seacrh for post that matches the id, to retrieve post and comments
     useEffect(()=>{
@@ -27,13 +27,11 @@ function DetailPost() {
    
     }, [params.id, userPosts])
 
-
     let replies = detailedPost.replies
 
     console.log(replies)
     if(replies == null) replies = []
     
-
     return (
         <div className="post-box">
         <div className="user-info">
@@ -52,19 +50,13 @@ function DetailPost() {
         </div>
 
             <div className='comments-txt'/>
-          {
-                    
+                {
                         // only returns posts made by user that matches id
                         postReplies.slice(0).reverse().map(post => {
-                            if(post.id === params.id) return <MadeReply key={post._id} post={post} />
-
-                            
-                        })
-                     
+                            if(post.id === params.id) return <MadeReply key={post._id} post={post} />   
+                        })  
                 }
-            
-
-            
+       
         </div>
     
     );
