@@ -31,9 +31,7 @@ function DetailPost() {
    
     }, [params.id, userPosts])
 
-    if(detailedPost == []) {
-        detailedPost = 0
-    }
+  
 
     let replies = detailedPost.replies
     if(replies == null) replies = []
