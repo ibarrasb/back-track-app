@@ -36,8 +36,6 @@ function DetailPost() {
     }
 
     let replies = detailedPost.replies
-
-    
     if(replies == null) replies = []
 
     const removePost = async(id) =>{
