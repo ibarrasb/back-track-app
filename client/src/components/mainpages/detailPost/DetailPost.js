@@ -31,7 +31,6 @@ function DetailPost() {
    
     }, [params.id, userPosts])
 
-  
 
     let replies = detailedPost.replies
     if(replies == null) replies = []
@@ -85,6 +84,7 @@ function DetailPost() {
     
             </div>
             <h1 className="post-text">{detailedPost.post}</h1>
+            <p className="detailed-date">{new Date(detailedPost.createdAt).toLocaleString()}</p>
     
             <div className="reply-input">
             <CreateReply />
@@ -93,7 +93,7 @@ function DetailPost() {
                 <div className='comments-txt'/>
                     {
                             // only returns posts made by user that matches id
-                            postReplies.slice(0).reverse().map(post => {
+                            postReplies.slice(0).map(post => {
                                 if(post.id === params.id) return <MadeReply key={post._id} post={post} />   
                             })  
                     }

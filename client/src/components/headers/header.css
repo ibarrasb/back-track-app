@@ -53,6 +53,10 @@ img.thought{
 header .logo{
     flex: 1;
 }
+.h-name{
+    color: orange;
+}
+
 header a{
     text-transform: uppercase;
     color: #555;

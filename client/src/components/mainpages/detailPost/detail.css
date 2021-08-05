@@ -11,3 +11,8 @@
 
     width: 100%;
 }
+.detailed-date{
+    text-align: right;
+    margin-left: 80%;
+   margin-bottom: -30px;
+}

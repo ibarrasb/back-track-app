@@ -30,6 +30,7 @@ function Login() {
         <div className="login-page">
             <form onSubmit={loginSubmit}>
                 <h2 className="login-head">Login</h2>
+                <p className='warning'>Username and password are case sensitive</p>
                 <input type="username" name="username" required
                 placeholder="Username" value={user.username} onChange={onChangeInput} />
 

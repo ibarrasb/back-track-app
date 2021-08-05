@@ -60,7 +60,7 @@ function Reply({post}) {
         </div>
         
         <h1 className="post-text">{post.post}</h1>
-
+        <p className="date">{new Date(post.createdAt).toLocaleString()}</p>
     </div>
 </div>
 

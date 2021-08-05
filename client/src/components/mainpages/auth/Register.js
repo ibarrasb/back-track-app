@@ -30,6 +30,7 @@ function Register() {
         <div className="login-page">
             <form onSubmit={registerSubmit}>
                 <h2 className="login-head">Register</h2>
+                <p className='warning'>Username and password are case sensitive</p>
                 <input type="text" name="name" required
                 placeholder="Name" value={user.name} onChange={onChangeInput} />
 

@@ -28,8 +28,8 @@ function Header() {
 
         return(
             <div>
-            <li><Link to="/" onClick={logoutUser}>Logout</Link></li>
-            <li><Link to={`/profile/${userID}`}>Profile</Link></li>
+            <li><Link className='h-name' to="/" onClick={logoutUser}>Logout</Link></li>
+            <li><Link className='h-name' to={`/profile/${userID}`}>Profile</Link></li>
             </div>
         )
     }
@@ -64,10 +64,14 @@ function Header() {
         </div>
 
         <ul style={styleMenu}>
-            <li><Link to="/">{isLogged ? 'Home' : ''}</Link></li>
+            
 
             {
-                isLogged ? loggedRouter() :  <li><Link to="/login">Login</Link></li>
+                isLogged ? loggedRouter() :  
+                <div>
+                    <li><Link className='h-name' to="/">home</Link></li>
+                    <li><Link className='h-name' to="/login">Login</Link></li>
+                </div>
             } 
             <li onClick={() => setMenu(!menu)}>
             <img src={Close} alt="" width="30" className="menu" />

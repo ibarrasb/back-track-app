@@ -10,6 +10,11 @@
     letter-spacing: 2px;
     color: orange;
 }
+.warning{
+    margin: 0;
+    padding: 0;
+    color: red;
+}
 
 .login-page form input,
 .login-page form button{
