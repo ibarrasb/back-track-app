@@ -13,7 +13,8 @@ import {GlobalState} from '../../GlobalState'
 function Pages() {
     const state = useContext(GlobalState)
     const [isLogged] = state.UserAPI.isLogged
-
+    
+//routes
     return (
         <Switch>
             <Route path='/' exact component={isLogged ? Home : LandingPage}/>
