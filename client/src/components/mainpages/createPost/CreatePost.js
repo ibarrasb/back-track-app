@@ -1,7 +1,6 @@
 import React, {useContext, useState}from 'react';
 import {GlobalState} from '../../../GlobalState'
 import Axios from 'axios';
-
 import { TextField } from '@material-ui/core';
 
 import './create.css'
@@ -18,8 +17,6 @@ const initialState = {
 
 function CreatePost() {
 
-    
- 
     const state = useContext(GlobalState)
     const [username] = state.UserAPI.username
     const [name] = state.UserAPI.name
