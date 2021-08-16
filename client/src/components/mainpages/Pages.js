@@ -7,6 +7,7 @@ import NotFound from './utils/not_found/NotFound'
 import LandingPage from './landing/Page'
 import UserProfile from './user/UserProfile'
 import DetailPost from './detailPost/DetailPost'
+import Search from './search/Search'
 
 import {GlobalState} from '../../GlobalState'
 
@@ -22,6 +23,7 @@ function Pages() {
             <Route path='/comments/:id' exact component={DetailPost}/>
             <Route path='/login' exact component={isLogged ? NotFound : Login}/>
             <Route path='/register' exact component={isLogged ? NotFound : Register}/>
+            <Route path='/search' exact component={isLogged ? Search : NotFound}/>
 
             <Route path='*' exact component={NotFound}/>
         </Switch>

@@ -30,6 +30,7 @@ function Header() {
             <div>
             <li><Link className='h-name' to="/" onClick={logoutUser}>Logout</Link></li>
             <li><Link className='h-name' to={`/profile/${userID}`}>Profile</Link></li>
+            <li><Link className='h-name' to="/search"></Link></li>
             </div>
         )
     }
