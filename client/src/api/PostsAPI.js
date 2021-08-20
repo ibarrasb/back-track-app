@@ -1,19 +1,16 @@
 import {useState, useEffect} from 'react'
 import axios from 'axios'
 
-
 function PostsAPI() {
     const [posts, setPosts] = useState([])
     const [callback, setCallback] = useState(false)
    
-
     useEffect(() =>{
         
         // Get all the posts made 
         const getPosts = async () => {
             const res = await axios.get('/api/posts')
             setPosts(res.data)
-           
         }
         getPosts()
     },[callback])

@@ -8,13 +8,11 @@ import Thought from '../../images/comment-solid.svg'
 import Menu from './icons/bars-solid.svg'
 import Close from './icons/times-circle-regular.svg'
 
-
 function Header() {
     const state = useContext(GlobalState)
     const [isLogged] = state.UserAPI.isLogged
     const [menu, setMenu] = useState(false)
     const [userID] = state.UserAPI.id
-
 
     //logs user out
     const logoutUser = async () => {
@@ -52,21 +50,20 @@ function Header() {
     }
 
     return (
+        
     <header className="head-er">
 
-            <div className="menu" onClick={() => setMenu(!menu)}>
-                <img src={Menu} alt="" width="30" />
-            </div>
+        <div className="menu" onClick={() => setMenu(!menu)}>
+            <img src={Menu} alt="" width="30" />
+        </div>
 
         <div className='logo'>
             <h1>
-                    <Link to="/">{isLogged ? hNew() : ''}</Link>
+                <Link to="/">{isLogged ? hNew() : ''}</Link>
             </h1>
         </div>
 
         <ul style={styleMenu}>
-            
-
             {
                 isLogged ? loggedRouter() :  
                 <div>
@@ -75,8 +72,8 @@ function Header() {
                 </div>
             } 
             <li onClick={() => setMenu(!menu)}>
-            <img src={Close} alt="" width="30" className="menu" />
-        </li>
+                <img src={Close} alt="" width="30" className="menu" />
+            </li>
 
         </ul>   
     </header>

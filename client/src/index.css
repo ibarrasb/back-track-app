@@ -46,11 +46,6 @@ body{
   background-image: url("./images/cool-background.png");
 }
 
- 
-
-
-
-
 /* ----------------- Responsive ------------------ */
 @media (max-width: 820px){
   header .logo{

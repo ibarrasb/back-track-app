@@ -52,7 +52,6 @@ function UserAPI(token) {
             await axios.patch('/user/addpost', {posts: [...tweet, {...posts}]}, {
                 headers: {Authorization: token}
             })
-
     }
 
     return {

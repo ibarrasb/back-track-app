@@ -8,7 +8,6 @@ import LandingPage from './landing/Page'
 import UserProfile from './user/UserProfile'
 import DetailPost from './detailPost/DetailPost'
 import Search from './search/Search'
-
 import {GlobalState} from '../../GlobalState'
 
 function Pages() {

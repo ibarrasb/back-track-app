@@ -21,6 +21,7 @@ export const DataProvider = ({children}) => {
     }, [])
 
 const state = {
+    
     token: [token, setToken],
     UserAPI: UserAPI(token),
     PostsAPI: PostsAPI(),
