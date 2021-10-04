@@ -45,8 +45,12 @@ function UserProfile() {
                 <h1>{detailedUser.name}</h1>
                     <h2>@{detailedUser.username}</h2>
                     <div className="follows">
+
+                    {/*
                     <h2 className="following">Following: {following.length}</h2>
                     <h2 className="followers">Followers: {followers.length}</h2>
+                    */}
+                    
                 </div>
             </div>
 
